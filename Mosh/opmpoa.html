@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="style.css">
+
+<head>
+    <meta charset="UTF-8">
+    <title>POC / Implemantation Guide</title>
+    <link rel="icon" href="./assets/logo.png" type="image/png">
+</head>
+<body>
+    <section>
+        <nav>
+            <a href="index.html" class="button">ITManPRO</a>
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Contact</a></li>
+              <li><a href="#">Login</a></li>
+            </ul>
+          </nav>
+          
+    </section>
+    
+    <nav class="navb" style="background-color: rgb(215, 214, 222);">
+        <h1 style="font-size: 100px;">     </h1>
+    </nav>
+    <section>
+        <div class="container">
+            <div class="left-section">
+              <h2>Index</h2>
+              <ul><a href="#mail" class="button" style="color: black;">Mail Server Settings</a></ul>
+              <ul><a href="#credentials" class="button" style="color: black;">Credentials</a></ul>
+              <ul><a href="#discovery" class="button" style="color: black;">Device Discovery</a></ul>
+              <ul><a href="#template" class="button" style="color: black;">Device Templates</a></ul>
+              <ul><a href="#group" class="button" style="color: black;">Groups</a></ul>
+              <ul><a href="#notiication" class="button" style="color: black;">Notification Profile</a></ul>
+              <ul><a href="#report" class="button" style="color: black;">Reports</a></ul>
+              <ul><a href="#bv" class="button" style="color: black;">Business Views</a></ul>
+              <ul><a href="#dashboard" class="button" style="color: black;">Dashboards</a></ul>
+              <ul><a href="#noc" class="button" style="color: black;">CCTV / NOC Views</a></ul>
+              <h3>Optional configurations</h3>
+              <ul><a href="#trap" class="button" style="color: black;">Traps</a></ul>
+
+            </div>
+            <div class="right-section">
+              <h2>OpManager Fundamentals:</h2>
+
+              <p>ManageEngine OpManager is a comprehensive network monitoring software that provides 
+                network administrators with an integrated console for managing routers, firewalls, 
+                servers, switches, and printers. ManageEngine OpManager offers extensive fault management
+               and performance management functionalities. It provides handy but powerful Customizable 
+               Dashboards and CCTV views that display the immediate status of your devices, at-a-glance 
+               reports, business views etc. OpManager also provides a lot of out-of-the-box graphs and 
+               reports, which give a wealth of information to network administrators about the health of their 
+               networks, servers and applications.</p><br />
+
+               <h2>Generally, POA consists of the following things:</h2><br/> 
+
+               <h3>1. Installation process depends on what kind of setup you are doing.</h3>
+
+               <p><a href="https://www.manageengine.com/network-monitoring/help/installing-opmanager.html">Standard / Professional</a> Edition, you can click on the name.</p>
+               <p><a href="https://www.manageengine.com/network-monitoring/help/installing-opmanager-enterprise.html">Enterprise</a> Edition, click on the name.</p>
+               <p><a href="https://www.manageengine.com/network-monitoring/help/server-migration.html">Migrating OPM Server link</a><br/><a href="https://www.manageengine.com/network-monitoring/help/prerequisites-for-upgrade.html">Upgradation Link</a></p><br/>
+               <h3 id="mail"><ul>2.Mail Server:</ul></h3>
+
+               <p>To configure mail server settings. You get to do it right after the installation is done</p>
+               <p>If you want to change it post installation, you can navigate to Settings ->General Settings -> Mail Server Settings</p><br/>
+               
+               <h3 id="credentials"><ul>3. Credentials:</ul></h3>
+               
+               <p>Go to Settings > Discovery > Credentials<br/>
+                Click Add Credential<br/>
+                Select the required credential category & credential type.<br/>
+                Configure the following parameters and click Save to add the credentials:</p><br/>
+               
+                <h3 id="discovery"><ul>4. Device Discovery:</ul></h3>
+                <p>Go to Settings → Discovery → Add Device / Server.<br/>
+                  Type either the IP Address or the Device Name of the device to be discovered.<br/>
+                  Click on the Ping icon near the Device Name / IP Address section to ping the device and check its availability.<br/>
+                  Select the required Credentials.<br/>
+                  Click on Add Device to start discovery</p><br />
+               
+                <h3 id="template"><ul>5. Device Templates:</ul></h3>
+                <p>Go to Settings → Configuration → Device Templates.<br/>
+                  Click on the Add Template option.<br/>
+                  Enter the mandatory fields - Device template name, vendor, category, availability monitoring interval and device image.<br/>
+                  Define a unique device identifier (SysObject ID) received from vendor or by querying the device itself.<br/>
+                  Click on Save.</p><br/>
+               
+                <h3 id="group"><ul>6. Groups:</ul></h3>
+                <p>Click on Settings → Configuration → Groups<br/> Click on the "Add" button<br/> Orelse, Go to <b>Inventory</b> → <b>Groups</b> → <b>Add Group</b>.<br/>
+                  Provide a suitable group name and description and click on Next.<br/>
+                  Select the type of elements you want to add to this group.<br/>
+                  Select the method to group the elements. You can group elements either 'Manually' or by 'Criteria'.<br/>
+                  If you selected the 'Manually' option - Select the group members from the available list and click on 'Next'.<br/>
+                  If you selected the 'By criteria' option - Select any one of the property available from the dropdown box, select a condition and provide a suitable value resolving the property and condition and click on '+' icon.<br/>
+                  Add multiple criteria if needed, along with the logical operation you need to perform based on the criteria. Click on Next.<br/>
+                  From the available members listed, select the members you want the group's health to depend on. If no members are chosen, then the health status of the group will depend on all the available members by default.</p><br/>
+               
+                <h3 id="notification"><ul>7. Notification Profile:</ul></h3>
+                <p>Go to Settings → Notifications<br/>
+                  Click Add.<br/>
+                  Select the Notification type as Email.<br/>
+                  Provide the From, To, and CC Email Address in addition to Subject and Message (select the required
+                   alarm variables which is to be displayed on the email subject and message). Click Next.<br/>
+                  Variables: Message Variables and Subject Variables are dynamic additional information that you can 
+                  include in your alert message. You can select the dynamic subject/message variable (information) 
+                  you want to include in the message based on the type of notification. Click here to learn more 
+                  about variables.<br/>
+                  Select the fault criteria for which you need to be notified. For instance, if you want to be 
+                  notified of threshold violation, select 'Threshold rule is violated'. Additionally notify only 
+                  when any or all the severity: Critical, Trouble, Attention, Service Down. Click Next<br/>
+                  Select the devices either By Category or By Business View or By Devices and click Next.<br/>
+                  Select the required Time Window, Delayed Trigger and Recurring Trigger and click Next.<br/>
+                  Give a profile name and Click Test Action to test the email profile or Save to save the profile.
+                  </p><br />
+               
+                <h3 id="report"><ul>8. Reports:</ul></h3>
+                <p>Navigate to Reports → OpManager</p>
+                <p>System<br/>Health and Performance<br/>Availability and Response<br/>Inventory<br/> WAN RTT Monitors<br/>VoIP Monitors<br/>Virtual Servers report<br/>Storage Reports<br/>
+                  Forecast reports<br/>Nutanix reports<br/>WLC reports<br/>My Favorites<br/>Application reports<br/>Schedule Reports<br/>Integrated Reports<br/>Advanced Reports</p><br/>
+                
+                <h3 id="bv"><ul>9. Business View:</ul></h3>  
+                  <p>Go to Maps > Business Views > Create New. Or go to Inventory > Business Views > Add Business View.<br/>  
+                    From the list of available devices, drag and drop the required devices into the white board individually or add devices in bulk using the Multi select option.<br/> 
+                    Customize the view by changing font type, size or color and edit the background if necessary.<br/>  
+                    Place the selected devices on the Map (background) based on your requirement.<br/>  
+                    Rename and save the created business view.</p><br/>  
+                
+                <h3 id="dashboard"><ul>10. Dashboards:</ul></h3>  
+                <p>1. Click on Dashboard. In the top right corner of the screen, click on the icon with + symbol. Create New Dashboard page opens [screen shots given below].<br/>
+                    Note: In case of Custom User Roles, the Dashboard tab will only be available for users who have atleast Read permission for Dashboard and only those users whose role grants them Read and Write permission can make changes. Learn more about Custom User Roles here. <br/>                
+                  2. Name: Enter a unique name for the dashboard. <br/>                
+                  3. Description: Enter a description about the dashboard.     <br/>            
+                  4. Click Next.<br/>
+                  5. Select Widget(s) from the list of widget categories. You could use the search bar to find the widget. <br/>
+                  6. Click Next.<br/>
+                  7. Select the user(s) whom you wish to share the dashboard with (Refer to the table below for privilege-based actions on custom dashboards).
+                  </p><br/>  
+
+                  <h3 id="noc"><ul>11. CCTV / NOC views:</ul></h3>
+                  <p>Go to Dashboard page and click NOC views.<br/>
+                    Click Create NOC View. New NOC page opens.<br/>
+                    Name: Enter a unique NOC name.<br/>
+                    Refresh Interval: Select the interval required to switch over to the next dashboard.<br/>
+                    Description: Enter a brief description about this NOC view.<br/>
+                    Select the desired dashboards that you want to include in this NOC view.<br/>
+                    Click Create NOC View.<br/>
+                    A new NOC view has been added.</p><br/>  
+                  
+                    <h2>Optional configurations that you might have to face.</h2>
+                  <h3 id="trap"><ul>12. Traps:</ul></h3>
+                  <p>1.Navigate to Settings--> Monitoring --> SNMP Trap Processors. <br/> Hover the cursor over the Actions tab and click on Add.<br/>
+                    2. Choose the SNMP version - SNMP v1/ SNMP v2c/v3 and enter the Name and Description.  <br />                 
+                    Note: When you use SNMP v3 to monitor a device and receive traps, please ensure that the same credentials are used for device monitoring and the traps. <br />       
+                    3. If you choose SNMP v1, then choose the Generic Type from the drop down. OpManager supports the following types of traps for SNMP v1. <br/>                  
+                    <li>coldStart:The agent re-initializes with its configuration altered.<br/></li>
+                    <li>warmStart: The agent re-initializes with its configurations unaltered.<br/></li>
+                    <li>Linkup: When the network interface card (NIC) on the agent is operating.<br/></li>
+                    <li>Linkdown: When the network interface card on the agent fails.<br/></li>
+                    <li>Authentication fails: This happens when an SNMP agent gets a request from an unrecognized community name.<br/></li>
+                    <li>egpNeighborloss: Agent cannot communicate with its EGP (Exterior Gateway Protocol) peer.<br/></li>
+                    <li>Enterprise specific: It varies based on the Vendor and specifies specific error conditions and error codes related to a particular vendor.<br/></li>
+                    4. Enter the Trap OID (monitoring parameter) and the Severity of the alarm for that trap.  <br/>                
+                    5. Enter the details of Failure Component. The failure component represents the metrics that are monitored in a source device and is used to limit the number of trap processors. For example, OpManager monitors the CPU utilization and the Fan status of a remote device, and the agent on the device sends a trap for high CPU utilization and another trap to notify Fan failure status. Because both these traps are from the same source device, OpManager will combine these two traps and consider them a single entity to limit the number of trap processors. <br/>                  
+                    6. Enter the Source, which is the device from which the trap is received. The trap alarm will be mapped to this device. <br/>                  
+                    7. Enter the Message. The content in the Message field contains the description for the created trap alarm. <br/>                
+                    8. Choose the Match Criteria protocol - AND/OR. Then choose the number of Varbinds and enter the corresponding Match Value. An alarm will be generated only when this value is matched with incoming trap. In the same way, enter the Rearm Criteria details. When the varbind values of the received trap matches with the varbind values configured for the Rearm Criteria the alarm raised for the trap will be cleared.</p><br/>  
+            </div>
+          </div>    
+    </section>
+    <footer>
+      <div class="container">
+          <div class="footer-item">
+              <h3 id="about">About Us</h3>
+          <p>We are growing and require <br/>your support with feedback.<br/>
+          Mail us your queries and <br/>requirement. We will <br/>soon be out with much more.</p>
+          </div>
+          <div class="footer-item">
+              <h3 id="contact">Contact Us</h3>
+          <p>Jatin Gohil - 8369220232</p>
+          <p>Mail us: jating@softcell.com</p>
+          </div>
+          <div class="footer-item">
+              <h3>Follow us</h3>
+          <p>LinkedIN - <a href="https://www.linkedin.com/in/jatin-gohil-540665125/" target="_blank">
+              <i class="fab fa-linkedin"></i>
+            </a></p>
+          </div>
+      </div>
+  </footer>  
+        
+</body>

@@ -1,0 +1,152 @@
+.container {
+    display: inline-flex;
+    width: 100%;
+}
+  
+.left-section {
+    flex-basis: 25%;
+    background-color: #f1f1f1;
+    padding: 20px;
+}
+  
+.right-section {
+    flex-basis: 75%;
+    background-color: #fff;
+    padding: 20px;
+}
+
+nav {
+    background-color: rgb(36, 33, 131);
+    overflow: hidden;
+    font-size: 25px;
+  }
+  
+  nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    float: right; /* added float property */
+  }
+  
+  nav ul li {
+    display: inline-block;
+  }
+  
+  nav ul li a {
+    display: block;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  nav ul li a:hover {
+    background-color: rgb(49, 46, 46);
+  }
+
+
+.button {
+    color: rgb(241, 230, 230);
+    padding: 10px 20px;
+    text-decoration: rgb(14, 14, 14);
+  }
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+  
+.card {
+    background-color: rgb(31, 31, 76);
+    text-decoration: underline;
+    font-size: 25px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    width: calc(33.33% - 100px);
+    margin-bottom: 30px;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.card:hover {
+    transform: scale(1.1);
+  }
+
+.card img {
+    max-width: 100%;
+} 
+  
+.card h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+  
+.card p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+  
+.mainp {
+    min-height: 100vh;
+    color: rgb(234, 228, 228);
+  }
+
+.mainp img{
+    width: 100%;
+}
+
+.section {
+
+	color: #fff;
+	padding: 20px;
+	text-align: center;
+    background-image: linear-gradient(to bottom, #ffffff, #18095e);
+}
+
+/* Reset Styles */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/* Base Styles */
+body {
+	font-family: Arial, sans-serif;
+	background-color: #f2f2f2;
+	color: rgb(103, 98, 98);
+	line-height: 1.6;
+}
+
+.container {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 20px;
+}
+
+footer {
+	background-image: linear-gradient(to bottom, #18095e, #0c0731);
+	color: #fff;
+	padding: 20px;
+	text-align: center;
+}
+
+.footer-item {
+	flex: 1;
+	padding: 10px;
+}
+
+/* Media Query for Responsive Design */
+@media screen and (max-width: 768px) {
+	.container {
+		max-width: 600px;
+	}
+	
+	.footer-item {
+		flex-basis: 50%;
+	}
+}
